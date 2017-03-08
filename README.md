@@ -11,6 +11,8 @@ sign in users
 API endpoints:
 user
 session
+register
+settings/preferences
 
 
 DB schema:
@@ -20,7 +22,6 @@ user
 - zip_code
 - city
 - state
-
 - email
 - password
 
