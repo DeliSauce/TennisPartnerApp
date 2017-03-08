@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Goal
 
-* Ruby version
+sign in users
+- include auth?
+- include OAuth (githuh, facebook, google) with OmniAuth?
 
-* System dependencies
 
-* Configuration
+API endpoints:
+user
+session
 
-* Database creation
 
-* Database initialization
+DB schema:
+user
+- first_name
+- last_name
+- zip_code
+- city
+- state
 
-* How to run the test suite
+- email
+- password
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- courts - array
+- gender (nil allowed)
+- skill_level (nil allowed)
+- birth_date
