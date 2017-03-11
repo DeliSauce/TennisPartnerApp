@@ -3,7 +3,7 @@
     <li>
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
     </li>
-    <%= "signed in as: " + current_user.email %>
+    <%= "signed in as: " + current_user.inspect %>
   <% else %>
     <li>
       <%= link_to "Sign In", new_user_session_path%>

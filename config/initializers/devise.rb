@@ -247,7 +247,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :facebook, '1296883267061760', ENV["FACEBOOK_APP_SECRET"], callback_url: "http://localhost:3000/users/auth/facebook/callback"
+  config.omniauth :facebook, '106953736487464', ENV["FACEBOOK_APP_SECRET"], callback_url: "http://localhost:3000/users/auth/facebook/callback"
   # config.omniauth :facebook, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :twitter, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
