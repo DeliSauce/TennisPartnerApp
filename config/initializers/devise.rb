@@ -255,7 +255,7 @@ Devise.setup do |config|
 
   config.omniauth :twitter, 'APP_ID', ENV["TWITTER_APP_SECRET"], callback_url: "http://localhost:3000/users/auth/twitter/callback"
 
-  config.omniauth :google_oauth2, '562540213085-jof7t35452ric16l5hqc396tblbremce.apps.googleusercontent.com', ENV["GOOGLE_APP_SECRET"], {callback_url: "http://localhost:3000/users/auth/google_oauth2/callback"}
+  config.omniauth :google_oauth2, '562540213085-jof7t35452ric16l5hqc396tblbremce.apps.googleusercontent.com', ENV["GOOGLE_APP_SECRET"], {callback_url: "http://localhost:3000/users/auth/google_oauth2/callback", scope: 'email,profile'}
 # callback_url: "http://localhost:3000/users/auth/google/callback"
 # callback_url: "http://localhost:3000/users/auth/google_oauth2/callback"
 

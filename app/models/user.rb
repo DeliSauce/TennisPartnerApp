@@ -32,27 +32,30 @@ class User < ApplicationRecord
          :lockable, :timeoutable, :omniauthable,
          :omniauth_providers => [:facebook, :twitter, :google_oauth2, :github]
 
-   def self.new_with_session(params, session)
-     super.tap do |user|
-       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-         user.email = data["email"] if user.email.blank?
-       end
+  #  def self.new_with_session(params, session)
+  #    super.tap do |user|
+  #      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+  #        user.email = data["email"] if user.email.blank?
+  #      end
       #  if data = session["devise.github_data"] && session["devise.github_data"]["extra"]["raw_info"]
       #    user.email = data["email"] if user.email.blank?
       #  end
       #  if data = session["devise.google_data"] && session["devise.google_data"]["extra"]["raw_info"]
       #    user.email = data["email"] if user.email.blank?
       #  end
-     end
-   end
+  #    end
+  #  end
 
    #code from facebook instructions
    def self.from_omniauth(auth)
      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
        user.email = auth.info.email
        user.password = Devise.friendly_token[0,20]
-       #user.name = auth.info.name   # assuming the user model has a name
-       #user.image = auth.info.image # assuming the user model has an image
+       user.name = auth.info.name   # assuming the user model has a name
+       user.image = auth.info.image # assuming the user model has an image
+      #  user.image = auth.info.first_name
+      #  user.image = auth.info.last_name
+
        # If you are using confirmable and the provider(s) you use validate emails,
        # uncomment the line below to skip the confirmation emails.
        # user.skip_confirmation!

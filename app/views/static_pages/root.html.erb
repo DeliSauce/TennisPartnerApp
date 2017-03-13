@@ -4,6 +4,7 @@
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
     </li>
     <%= "signed in as: " + current_user.inspect %>
+    <img src=<%= current_user.image %> alt="">
   <% else %>
     <li>
       <%= link_to "Sign In", new_user_session_path%>
