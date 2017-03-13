@@ -248,10 +248,16 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   config.omniauth :facebook, '106953736487464', ENV["FACEBOOK_APP_SECRET"], callback_url: "http://localhost:3000/users/auth/facebook/callback"
+
   # config.omniauth :facebook, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :twitter, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :google, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+
+  config.omniauth :github, '73d149f56d9e359c62e7', ENV["GITHUB_APP_SECRET"], callback_url: "http://localhost:3000/users/auth/github/callback"
+
+  config.omniauth :twitter, 'APP_ID', ENV["TWITTER_APP_SECRET"], callback_url: "http://localhost:3000/users/auth/twitter/callback"
+
+  config.omniauth :google_oauth2, '562540213085-jof7t35452ric16l5hqc396tblbremce.apps.googleusercontent.com', ENV["GOOGLE_APP_SECRET"], {callback_url: "http://localhost:3000/users/auth/google_oauth2/callback"}
+# callback_url: "http://localhost:3000/users/auth/google/callback"
+# callback_url: "http://localhost:3000/users/auth/google_oauth2/callback"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

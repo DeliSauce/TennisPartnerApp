@@ -11,7 +11,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'omniauth-twitter'
-gem 'omniauth-google'
+gem 'omniauth-google-oauth2'
 
 # Hide sensitive info. Use 'be figaro install' to create application.yml file.
 gem 'figaro'
